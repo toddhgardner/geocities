@@ -1,0 +1,50 @@
+body.index {
+
+  background: url('/assets/img/bluebricks.jpeg');
+  background-size: cover;
+
+  main {
+    padding: $spacing-unit 0;
+    min-height: 100vh;
+  }
+
+  header.page-header {
+    h1 {
+      color: magenta;
+      text-align: center;
+      font-size: 3em;
+    }
+    .under-construction {
+      background: url('/assets/img/caution.webp');
+      background-size: cover;
+      max-width: 680px;
+      width: 100%;
+      h2 {
+        text-align: center;
+        text-transform: uppercase;
+        color: red;
+        font-size: 2em;
+        padding: 5px 10px;
+        margin: 0;
+      }
+    }
+  }
+
+  .babies {
+    img {
+      flex: 1 1 auto;
+      width: 33%;
+    }
+  }
+
+  footer.site-footer {
+    .container {
+      flex-direction: row;
+    }
+    .footer-ads,
+    .footer-counters {
+      flex: 0 0 50%;
+    }
+  }
+
+}

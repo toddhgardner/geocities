@@ -1,0 +1,61 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+// Typography
+@import "fonts";
+$base-font-family:      "Comic Sans", sans-serif;
+$header-font-family:    "Comic Sans", sans-serif;
+$base-font-size:        16px;
+$base-line-height:      1.5;
+$base-font-weight:      400;
+$bold-font-weight:      600;
+
+// Colors
+$text-color:            #000000;
+$background-color:      #FFFFFF;
+
+// Sizes
+$spacing-unit:          30px;
+$desktop-width:         1200px;
+$laptop-width:          900px;
+$tablet-width:          768px;
+$mobile-width:          600px;
+$min-width:             375px;
+$max-text-width:        700px;
+$header-collapse-width: 1100px;
+
+
+// Imports
+@import "reset";
+@import "util";
+@import "_pages/index";
+// @import "layout";
+// @import "buttons";
+// @import "toggle-drawers";
+// @import "_includes/header";
+// @import "_includes/category_tags";
+// @import "_includes/code";
+// @import "_includes/feature_wall";
+// @import "_includes/footer";
+// @import "_includes/post_card";
+// @import "_includes/price-picker";
+// @import "_includes/product_guide_nav";
+// @import "_includes/search_form";
+// @import "_pages/index";
+// @import "_pages/blog-author";
+// @import "_pages/blog-author-list";
+// @import "_pages/blog-post";
+// @import "_pages/blog-list";
+// @import "_pages/building";
+// @import "_pages/core-web-vitals";
+// @import "_pages/for";
+// @import "_pages/long-form-post";
+// @import "_pages/newsletter";
+// @import "_pages/policy";
+// @import "_pages/pricing";
+// @import "_pages/product-guide";
+// @import "_pages/search";
+// @import "_pages/web-performance";
+// @import "_pages/docs";
+// @import "_pages/tools";
