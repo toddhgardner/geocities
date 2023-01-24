@@ -56,7 +56,11 @@ title: "Todd's Geocities Fansite"
           <img src="/assets/img/ubid.gif" alt="uBid Online Auctions" width="234" height="120"/>
         </a>
       </div>
-      <div class="footer-counters">
+      <div class="footer-counters flex-column">
+        <h3>visit counter</h3>
+        <div class="counter counter-1"><!-- JS Injects Here --></div>
+        <div class="counter counter-2"><!-- JS Injects Here --></div>
+        <div class="counter counter-3"><!-- JS Injects Here --></div>
 
       </div>
     </div>
@@ -117,5 +121,37 @@ title: "Todd's Geocities Fansite"
       renderResponses();
     })
 
+  })();
+</script>
+
+<script>
+  function getLast() {
+    try {
+      return parseInt(localStorage.getItem("COUNTER") || "0", 10);
+    }
+    catch(e) {
+      return 0;
+    }
+  }
+  function saveVal(val) {
+    try {
+      localStorage.setItem("COUNTER", val);
+    }
+    catch(e) {}
+  }
+
+  function getRandomArbitrary(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+
+  (function() {
+    var lastVal = getLast();
+    var val = getRandomArbitrary(lastVal, lastVal+1000);
+    var counters = document.querySelectorAll(".counter");
+    counters.forEach((e) => {
+      e.textContent = val;
+    });
+
+    saveVal(val);
   })();
 </script>

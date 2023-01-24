@@ -72,6 +72,42 @@
     .footer-ads,
     .footer-counters {
       flex: 0 0 50%;
+      padding: 10px;
+
+      h3 {
+        color: lime;
+      }
+
+      .counter-1 {
+        text-align: right;
+        padding: 0px 16px;
+        background: #111;
+        font-size: 1.8em;
+        font-family: monospace;
+        font-weight: 800;
+        color: lime;
+        letter-spacing: 4px;
+        margin-bottom: 10px;;
+      }
+      .counter-2 {
+        background: white;
+        font-family: serif;
+        font-weight: 900;
+        letter-spacing: 5px;
+        font-size: 1.8em;
+        text-align: right;
+        margin-bottom: 10px;;
+      }
+      .counter-3 {
+        background: purple;
+        color: white;
+        font-weight: 900;
+        letter-spacing: 5px;
+        font-size: 1.8em;
+        text-align: right;
+        text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #e60073, 0 0 4px #e60073, 0 0 5px #e60073, 0 0 6px #e60073, 0 0 7px #e60073;
+        margin-bottom: 10px;;
+      }
     }
   }
 
