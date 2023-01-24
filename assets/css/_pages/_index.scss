@@ -1,4 +1,4 @@
-body.index {
+  body.index {
 
   background: url('/assets/img/bluebricks.jpeg');
   background-size: cover;
@@ -26,6 +26,34 @@ body.index {
         font-size: 2em;
         padding: 5px 10px;
         margin: 0;
+      }
+    }
+  }
+
+  .form {
+    padding: $spacing-unit 0;
+    color: white;
+    font-size: 1.4em;
+    text-align: center;
+
+    textarea {
+      margin: $spacing-unit/2 0;
+    }
+
+    .responses {
+      margin-top: $spacing-unit;
+      text-align: left;
+      .response {
+        margin-bottom: $spacing-unit;
+      }
+      .meta {
+        font-size: 0.9em;
+        color: #ccc;
+        strong {
+          color: magenta;
+        }
+
+
       }
     }
   }

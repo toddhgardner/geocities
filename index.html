@@ -24,7 +24,16 @@ title: "Todd's Geocities Fansite"
   </header>
 
   <section class="form">
-    <div class="container"></div>
+    <div class="container">
+      <form class="flex-column" id="response-form">
+        <label class="flex-column">
+          <div>What was awesome about the early Internet?</div>
+          <textarea rows="4" name="text"></textarea>
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+      <div class="responses" id="response-list"><!-- JS Injects Here --></div>
+    </div>
   </section>
 
   <section class="babies">
@@ -34,7 +43,6 @@ title: "Todd's Geocities Fansite"
         <img src="/assets/img/babygif2.gif" />
         <img src="/assets/img/babygif2.gif" />
       </div>
-
     </div>
   </section>
 
@@ -56,3 +64,58 @@ title: "Todd's Geocities Fansite"
 
 
 </main>
+
+<script>
+
+  function getResponses() {
+    try {
+      return JSON.parse(localStorage.getItem("RESPONSES") || "[]");
+    } catch(e) {
+      return [];
+    }
+  }
+
+  function addResponse(resp) {
+    var responses = getResponses();
+    responses.push(resp);
+    try {
+      return localStorage.setItem("RESPONSES", JSON.stringify(responses));
+    } catch(e) {}
+  }
+
+  function renderResponses() {
+    var responses = getResponses();
+    var responseEl = document.querySelector("#response-list");
+    responseEl.innerHTML = "";
+
+    responses.forEach((r) => {
+      var el = document.createElement("div");
+      el.setAttribute("class", "response flex-column");
+      el.innerHTML = `
+        <div class="meta">By <strong>You</strong> at <strong>${r.date}</strong></div>
+        <div class="text">${r.text}</div>`
+      responseEl.appendChild(el);
+    });
+  }
+
+  (function() {
+
+    renderResponses();
+
+    var formEl = document.querySelector("#response-form");
+    formEl.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+
+      var date = new Date().toLocaleTimeString();
+      var formData = new FormData(evt.target);
+
+      formEl.reset();
+      addResponse({
+        date: date,
+        text: formData.get("text")
+      });
+      renderResponses();
+    })
+
+  })();
+</script>
