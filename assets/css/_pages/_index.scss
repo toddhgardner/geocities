@@ -35,6 +35,10 @@
     color: white;
     font-size: 1.4em;
     text-align: center;
+    .container {
+      max-width: 680px;
+    }
+
 
     textarea {
       margin: $spacing-unit/2 0;
@@ -68,6 +72,7 @@
   footer.site-footer {
     .container {
       flex-direction: row;
+      max-width: 680px;
     }
     .footer-ads,
     .footer-counters {
